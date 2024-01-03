@@ -9,7 +9,11 @@ date_format = '%Y-%m-%d %H:%M:%S.%f'
 pst_date = datetime.now(tz=utc).astimezone(timezone('US/Pacific')).strftime(date_format)
 v_date = datetime.strptime(pst_date, date_format).date()
 
-
+def string_analysis():
+    print("---------------------------string analysis-----------------------")
+    s = "hello"
+    print(s[::-1])
+    print("---------------------------string analysis-----------------------")
 def list_analysis():
     # List are Mutable
     # List items are ordered, changeable, and allow duplicate values.
@@ -192,7 +196,7 @@ def file_analysis():
         conents = f.read()
     print("contents")
     print(conents)
-    
+
 def boolean_analysis():
     print("----------------------boolean analysis--------------")
     print(2.0==2)
@@ -208,3 +212,4 @@ if __name__ == "__main__":
     sets_analysis()
     file_analysis()
     boolean_analysis()
+    string_analysis()
