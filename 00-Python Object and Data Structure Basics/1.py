@@ -125,7 +125,7 @@ def convert_listof_dict():
 def convert_list_to_string():
     list_of_tables="Below are the tables not refreshed: \n"
     l1=[['2023-09-19', 'shipment`'], ['2023-09-19', 'contract`'],
-     ['2023-09-19', '_deployment_rate`']]
+     ['2023-09-19', 'rate`']]
     for i in l1:
         list_of_tables += f"{i[1]} : {i[0]} \n"
     print(list_of_tables)
