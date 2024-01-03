@@ -192,7 +192,12 @@ def file_analysis():
         conents = f.read()
     print("contents")
     print(conents)
-
+    
+def boolean_analysis():
+    print("----------------------boolean analysis--------------")
+    print(2.0==2)
+    print(4**0.5 != 2)
+    print("----------------------boolean analysis--------------")
 
 if __name__ == "__main__":
     list_analysis()
@@ -202,3 +207,4 @@ if __name__ == "__main__":
     tuple_analysis()
     sets_analysis()
     file_analysis()
+    boolean_analysis()
