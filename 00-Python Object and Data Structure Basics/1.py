@@ -37,8 +37,12 @@ def list_analysis():
     l4=[1,4,2,5,3,9,8]
     l4.sort()
     print(l4)
+    list3 = [1, 2, [3, 4, 'hello']]
+    list3[2][2]='GoodBye'
+    print(list3)
 
 def dict_analysis():
+    print("-------------------dict analysis--------------------")
     d1 = {1:"apple",2:"orange"}
     print(d1.items())
     d2={"edp.sales.shipment":"snapshotdate"
@@ -55,6 +59,14 @@ def dict_analysis():
     print(v_sql)
     v_sql = f"SELECT * FROM ({v_sql}) WHERE date(snapshot_date)!='{v_date}'"
     print(v_sql)
+        d4 = {'k1': [{'nest_key': ['this is deep', ['hello']]}]}
+    print(d4["k1"][0]["nest_key"][1][0])
+
+    d5 = {'k1': [1, 2, {'k2': ['this is tricky', {'tough': [1, 2, ['hello']]}]}]}
+    d6=OrderedDict(sorted(d5.items()))
+    print(d6)
+
+    print("-------------------dict analysis--------------------")
 
 def convert_listof_dict():
     l1=[{'name': 'insights', 'type': 'INTEGER'}, {'name': 'changestatus', 'type': 'STRING'}, {'name': 'isdebug', 'type': 'BOOLEAN'}
@@ -150,6 +162,18 @@ def sets_analysis():
     l=[1,1,1,1,1,12,2,2,2,2,8,9,0,0,0,0]
     print(set(l))
     print("-------------------sets analysis--------------------")
+    
+def file_analysis():
+    # r+ is reading and wrinting
+    # w+ is wrinting and reading (Overwirte existing and create a new file)
+    with open("exmple_file_1",mode='w+') as f:
+        f.write("abcd\n")
+        f.write("bgcdsf")
+    with open("exmple_file_1", mode='r') as f:
+        conents=f.read()
+    print("contents")
+    print(conents)
+
 
 if __name__=="__main__":
     list_analysis()
@@ -158,3 +182,4 @@ if __name__=="__main__":
     convert_list_to_string()
     tuple_analysis()
     sets_analysis()
+    file_analysis()
