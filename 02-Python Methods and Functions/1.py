@@ -1,5 +1,6 @@
-
-
+import timeit
+import math
+import string
 def check_even_list(l):
     # pleceholder to retunn
     even_list = []
@@ -156,6 +157,51 @@ def map_analysis():
     print(list(map(str.capitalize,string_it)))
     print("".join(map(rotate_chr, "My secret message goes here.")))
 
+def filter_analysis():
+    seq=[0,1,2,3,4,5,6,7,8]
+    start = timeit.default_timer()
+    print(list(filter(lambda x: x%2!=0,seq)))
+    print("The difference of time is :",timeit.default_timer() - start)
+    start = timeit.default_timer()
+    print([x for x in seq if x%2!=0])
+    print("The difference of time is :",timeit.default_timer() - start)
+    start = timeit.default_timer()
+    print(list(filter(lambda x: x % 2 == 0, seq)))
+    print("The difference of time is :",timeit.default_timer() - start)
+    start = timeit.default_timer()
+    print([x for x in seq if x % 2 == 0])
+    print("The difference of time is :", timeit.default_timer() - start)
+
+def vol_sphere(rad):
+    return (4/3)*(math.pi)*math.pow(rad,3)
+
+def upper_lower(s):
+    d={"upper":0,"lower":0}
+    for i in s:
+        if i.isupper():
+            d["upper"] +=1
+        elif i.islower():
+            d["lower"] += 1
+    print(f"No. of Lower case characters : {d['lower']}")
+    print(f"No. of Upper case characters : {d['upper']}")
+
+def x_multiply(l):
+    return (f"multiplication of list is :{math.prod(l)}")
+
+def palindrome(s):
+    s=s.replace(" ","")
+    if s==s[::-1]:
+        return f"string '{s}' is palindrome"
+    return f"string '{s}' is not palindrome"
+
+def ispangram(str,alpha=string.ascii_lowercase):
+    #str1=''.join(sorted(set(list(str.replace(" ","").lower()))))
+    str1 = sorted(set(str.replace(" ", "").lower()))
+    if str1==sorted(set(alpha)):
+        return f"string '{str}' is ispangram"
+    return f"string '{str}' is not ispangram"
+
+
 
 if __name__ == "__main__":
     function_analyis()
@@ -189,3 +235,11 @@ if __name__ == "__main__":
     print(numbers)
     print(count)
     map_analysis()
+    filter_analysis()
+    print(vol_sphere(2))
+    upper_lower('Hello Mr. Rogers, how are you this fine Tuesday?')
+    print(x_multiply([1, 2, 3, -4]))
+    print(palindrome('helleh'))
+    print(palindrome('abc'))
+    print(ispangram("The quick brown fox jumps over the lazy dog"))
+    print(ispangram("The quick brown fox jumps over the lazy cat"))
