@@ -21,3 +21,13 @@ Hadoop:
 	Copy winutils.exe file to C:\winutils\bin (Create it)
 	Add Environment Variables:
 	HADOOP_HOME : C:\winutils
+
+pip install pyspark
+pip install pytz
+pip install PyYaml
+pip install urllib3
+pip install requests
+pip install google-cloud-bigquery
+pip install google-cloud-storage
+pip install google-cloud-secret-manager
+pip install pandas
