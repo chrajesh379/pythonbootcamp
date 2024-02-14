@@ -22,17 +22,16 @@ Hadoop:
 	Add Environment Variables:
 	HADOOP_HOME : C:\winutils
 
+PIP Installs:
+
 pip install pyspark
-
 pip install pytz
-
 pip install PyYaml
-
 pip install urllib3
-
 pip install requests
 pip install google-cloud-bigquery
 pip install google-cloud-storage
 pip install google-cloud-secret-manager
 pip install pandas
 pip install -U scikit-learn
+pip install -U matplotlib
