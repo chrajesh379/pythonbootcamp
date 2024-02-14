@@ -31,3 +31,4 @@ pip install google-cloud-bigquery
 pip install google-cloud-storage
 pip install google-cloud-secret-manager
 pip install pandas
+pip install -U scikit-learn
